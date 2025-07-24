@@ -1,5 +1,12 @@
-# example
+# duplicate-MAC-detection-timer
 
-This pack is primarily a template intended to help pack publishers put together their own packs and pack release workflows.
+This configlet sets duplicate MAC detection timers for evpn
+The [junos documentation](https://www.juniper.net/documentation/us/en/software/junos/evpn-vxlan/topics/task/configuring-mac-mobility-settings.html) has serveral options we focus just on one
 
-It a simple example which creates a single _configlet_ in the Apstra global catalog.
+Here is the stanza for the setting:
+```
+protocols evpn {
+	duplicate-mac-detection {
+		auto-recovery-time 22;
+	}
+}
